@@ -10,15 +10,15 @@
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
                             <div class="mt-3">
                                 <h4>{{ @$model->name }}</h4>
-                                <p class="text-secondary mb-1">Zameranie</p>
-                                <p class="text-muted font-size-sm">Adresa</p>
-                                <button class="btn btn-primary">Edit</button>
-                                <button class="btn btn-success">Change password</button>
-                                <button class="btn btn-danger">Delete</button>
+                                <p class="text-secondary mb-1">{{ @$model->focus }}</p>
+                                <p class="text-muted font-size-sm">{{ @$model->address }}</p>
+                                <a href="{{route('profile.edit', [@$model->id])}}" class="btn btn-primary" role="button">Edit</a>
+                                <a href="" class="btn btn-success" role="button">Change password</a>
+                                <a href="{{route('profile.delete',[@$model->id])}}" class="btn btn-danger" data-method="DELETE" role="button">Delete</a>
                             </div>
                         </div>
                     </div>
-                </div> <!-- koniec okna rychle spravy -->
+                </div> <!-- koniec okna s fotkou -->
 
             </div>
             <div class="col-md-8">
@@ -50,7 +50,7 @@
                                 <h6 class="mb-0">Telefón</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Cislo
+                                {{ @$model->phone_number }}
                             </div>
                         </div>
                         <hr>
@@ -59,13 +59,22 @@
                                 <h6 class="mb-0">Addresa</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                                Adresa
+                                {{ @$model->address }}
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Zameranie</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                {{ @$model->focus }}
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div> <!-- koniec prvej casti -->
+    </div> <!-- koniec okna s informaciami o profile -->
     <hr>
 @endsection

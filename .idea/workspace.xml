@@ -20,9 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 2. npm installed, npm run dev, dtb setup">
-      <change afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/deleted.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b6efc4e3-32ef-455a-9c72-1d95eaa5da3a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b6efc4e3-32ef-455a-9c72-1d95eaa5da3a.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +40,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpServers">
+    <servers>
+      <server host="localhost" id="8655458d-5b45-4a18-9316-33998416c7f5" name="localhost" />
+    </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -180,7 +189,7 @@
       <option name="presentableId" value="Default" />
       <updated>1610709062573</updated>
       <workItem from="1610709063602" duration="2557000" />
-      <workItem from="1610716499026" duration="7153000" />
+      <workItem from="1610716499026" duration="17005000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1. Laravel setup + laravel debug bar">
       <created>1610709483170</created>
@@ -203,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610717096609</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Commit 4. pridana trieda ProfileController, index view pre profil, zabezpeceny routing s profile controllerom. TODO: edit, update, destroy, password change">
+      <created>1610727977485</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1610727977485</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +240,8 @@
     <MESSAGE value="Commit 1. Laravel setup + laravel debug bar" />
     <MESSAGE value="Commit 1. npm installed, npm run dev" />
     <MESSAGE value="Commit 2. npm installed, npm run dev, dtb setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 2. npm installed, npm run dev, dtb setup" />
+    <MESSAGE value="Commit 4. pridana trieda ProfileController, index view pre profil, zabezpeceny routing s profile controllerom. TODO: edit, update, destroy, password change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 4. pridana trieda ProfileController, index view pre profil, zabezpeceny routing s profile controllerom. TODO: edit, update, destroy, password change" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610716585206">
@@ -235,10 +252,58 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610717626096" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1610717102314">
+    <state width="1877" height="287" key="GridCell.Tab.0.bottom" timestamp="1610737821977">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610717102314" />
+    <state width="1877" height="287" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.0.center" timestamp="1610737821977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.0.left" timestamp="1610737821977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.0.right" timestamp="1610737821977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.1.bottom" timestamp="1610737821977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.1.center" timestamp="1610737821977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.1.left" timestamp="1610737821977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.1.right" timestamp="1610737821977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821977" />
+    <state width="1877" height="287" key="GridCell.Tab.2.bottom" timestamp="1610737821978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821978" />
+    <state width="1877" height="287" key="GridCell.Tab.2.center" timestamp="1610737821978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821978" />
+    <state width="1877" height="287" key="GridCell.Tab.2.left" timestamp="1610737821978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821978" />
+    <state width="1877" height="287" key="GridCell.Tab.2.right" timestamp="1610737821978">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="287" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610737821978" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1610727987590">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610727987590" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610716630302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -247,5 +312,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="854" y="407" width="316" height="244" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1920.1040@0.0.1920.1040" timestamp="1610716423282" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/app/Http/Controllers/ProfileController.php</url>
+          <line>92</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
