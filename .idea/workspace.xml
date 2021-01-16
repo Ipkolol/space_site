@@ -19,14 +19,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 5. crud almost done, delte-&gt;routing not working">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/22687850-dbc4-415e-8872-6a47339df4f6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/22687850-dbc4-415e-8872-6a47339df4f6/storage_v2/_src_/schema/blog.oi8uAA.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/22687850-dbc4-415e-8872-6a47339df4f6/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 6. profile picture added">
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b6efc4e3-32ef-455a-9c72-1d95eaa5da3a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b6efc4e3-32ef-455a-9c72-1d95eaa5da3a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/space_site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/space_site.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -158,6 +161,7 @@
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/generators" />
     </include_path>
   </component>
   <component name="ProjectId" id="1n6SUS15P2E080BGxlq5TyXYhii" />
@@ -191,7 +195,7 @@
       <workItem from="1610709063602" duration="2557000" />
       <workItem from="1610716499026" duration="17146000" />
       <workItem from="1610785598382" duration="2774000" />
-      <workItem from="1610802429085" duration="2839000" />
+      <workItem from="1610802429085" duration="12048000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1. Laravel setup + laravel debug bar">
       <created>1610709483170</created>
@@ -228,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610738008951</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Commit 6. profile picture added">
+      <created>1610805407629</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1610805407629</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,13 +263,18 @@
     <MESSAGE value="Commit 4. pridana trieda ProfileController, index view pre profil, zabezpeceny routing s profile controllerom. TODO: edit, update, destroy, password change" />
     <MESSAGE value="Commit 2. npm installed, npm run dev, dtb setup" />
     <MESSAGE value="Commit 5. crud almost done, delte-&gt;routing not working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 5. crud almost done, delte-&gt;routing not working" />
+    <MESSAGE value="Commit 6. profile picture added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 6. profile picture added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610716585206">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610716585206" />
+    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610813032562">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610813032562" />
     <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1610717626096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -311,10 +327,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="287" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610738022940" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1610738014134">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1610805418916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610738014134" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610805418916" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610716630302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
