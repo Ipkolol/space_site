@@ -7,14 +7,21 @@
                 <div class="card" id="profile_public">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                            <img src="{{ asset('/storage/images/'. Auth::user()->avatar) }}" alt="avatar" class="w3-round" width="100">
                             <div class="mt-3">
                                 <h4>{{ @$model->name }}</h4>
                                 <p class="text-secondary mb-1">{{ @$model->focus }}</p>
                                 <p class="text-muted font-size-sm">{{ @$model->address }}</p>
                                 <a href="{{route('profile.edit', [@$model->id])}}" class="btn btn-primary" role="button">Edit</a>
-                                <a href="" class="btn btn-success" role="button">Change password</a>
                                 <a href="{{route('profile.delete',[@$model->id])}}" class="btn btn-danger" data-method="DELETE" role="button">Delete</a>
+                                <hr>
+                                <div >
+                                    <form action="{{ url('uploadAvatar') }}" method="post" enctype="multipart/form-data">
+                                        @csrf
+                                        <input type="file" name="image">
+                                        <input type="submit" name="Upload">
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>

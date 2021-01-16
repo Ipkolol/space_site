@@ -86,12 +86,22 @@ class ProfileController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
         $user = Auth::user();
         $user->delete();
-        return redirect()->route('profile.index');
+        return view('/deleted');
+    }
+
+    public function uploadAvatar(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('images', $filename, 'public');
+            auth()->user()->update(['avatar'=> $filename]);
+        }
+        return redirect()->back();
     }
 }
