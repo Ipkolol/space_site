@@ -19,10 +19,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 7. posts added">
+    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 8. showing posts added">
+      <change afterPath="$PROJECT_DIR$/resources/views/user/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +193,7 @@
       <workItem from="1610716499026" duration="17146000" />
       <workItem from="1610785598382" duration="2774000" />
       <workItem from="1610802429085" duration="12301000" />
-      <workItem from="1610886039246" duration="2441000" />
+      <workItem from="1610886039246" duration="7799000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1. Laravel setup + laravel debug bar">
       <created>1610709483170</created>
@@ -239,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610817399236</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Commit 8. showing posts added">
+      <created>1610888537901</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1610888537901</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,17 +277,18 @@
     <MESSAGE value="Commit 5. crud almost done, delte-&gt;routing not working" />
     <MESSAGE value="Commit 6. profile picture added" />
     <MESSAGE value="Commit 7. posts added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 7. posts added" />
+    <MESSAGE value="Commit 8. showing posts added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 8. showing posts added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610716585206">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610716585206" />
-    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610813032562">
+    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610892912447">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610813032562" />
+    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610892912447" />
     <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1610717626096">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -328,10 +341,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="287" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610738022940" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1610817403987">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1610888544235">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610817403987" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1610888544235" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610716630302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

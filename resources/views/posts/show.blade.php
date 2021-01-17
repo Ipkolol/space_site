@@ -7,12 +7,12 @@
                 <article class="post">
                     <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
                     <div class="article-content">
-                        <p class="card-text">{!! nl2br(e($post->article)) !!}</p>
+                        {!! nl2br(e($post->article)) !!}
                     </div>
                     <div>
-                        <span class="badge">Posted {{ @$post->created_at }}</span>
+                        <time><span class="badge">Posted {{ @$post->created_at }}</span> </time>
                         <br>
-                        <span class="badge"> by user</span>
+                        <span class="badge">by <a href="{{ url('user', @$post->user->id ) }}">{{ @$post->user->name }}</a></span>
                     </div>
                 </article>
             </div>

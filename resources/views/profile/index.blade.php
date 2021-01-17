@@ -7,7 +7,9 @@
                 <div class="card" id="profile_public">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
+                            @if(Auth::user()->avatar)
                             <img src="{{ asset('/storage/images/'. Auth::user()->avatar) }}" alt="avatar" class="w3-round" width="100">
+                            @endif
                             <div class="mt-3">
                                 <h4>{{ @$model->name }}</h4>
                                 <p class="text-secondary mb-1">{{ @$model->focus }}</p>
