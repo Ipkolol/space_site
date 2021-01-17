@@ -11,11 +11,11 @@
                         </div>
                         <div class="col-sm-9" style="padding-left: 10px">
                             <article class="">
-                                <header><a href="#"><h5> {{ @$post->title }} </h5> </a> </header>
+                                <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
                                 <time class="card-text"><small class="text-muted">{{ @$post->created_at }}</small></time>
                                 <div><p class="card-text">{{ substr(strip_tags($post->article), 0, 300) }}...</p></div>
                                 <footer class="">
-                                    <a href="">read more...</a>
+                                    <a href="{{ url('posts', @$post->id) }}">read more...</a>
                                 </footer>
                             </article>
                         </div>
