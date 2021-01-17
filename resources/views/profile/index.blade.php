@@ -85,5 +85,23 @@
             </div>
         </div>
     </div> <!-- koniec okna s informaciami o profile -->
-    <hr>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <hr>
+            <h2>Your posts:</h2>
+            @foreach($posts as $post)
+                <div class="container" style="padding-top: 10px">
+                    <div class="card">
+                        <div class="" style="padding-left: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s;">
+                            <article class="">
+                                <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
+                                <time class="card-text"><small class="text-muted">{{ @$post->created_at }}</small></time>
+                                <div><p class="card-text">{{ substr(strip_tags($post->article), 0, 100) }}...</p></div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 @endsection

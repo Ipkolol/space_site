@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class Post extends Model
@@ -16,7 +17,6 @@ class Post extends Model
      * @var array
      */
     protected $attributes = [
-        'user_id' => 30,
         'up_vote' => 0,
         'down_vote' => 0,
     ];
@@ -46,5 +46,6 @@ class Post extends Model
     {
         $this->attributes['title'] = $value;
         $this->attributes['slug'] = Str::slug($value, '-');
+        $this->attributes['user_id'] = Auth::user()->id;
     }
 }

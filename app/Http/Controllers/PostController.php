@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all(); // uloz vsetky posty z databazy do premennej posts
+        $posts = Post::orderBy('updated_at','desc')->get(); // uloz vsetky posty z databazy do premennej posts, v chronologickom poradi
         return view('posts.index', ['posts' => $posts]); //vrat view 'posts.index' do ktoreho posli premennu posts
     }
 
@@ -88,6 +88,9 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+        $post->delete();
+
+        return redirect()->route('posts.index');
     }
 }

@@ -24,7 +24,7 @@
                     <div>
                         <time><span class="badge">Posted {{ @$post->created_at }}</span> </time>
                         <br>
-                        <span class="badge">by <a href="{{ url('user', @$post->user->id ) }}">{{ @$post->user->name }}</a></span>
+                        <span class="badge">by <a href="{{ !empty($post->user->name) ? url('user', @$post->user->id ):''}}">{{ !empty($post->user->name) ? $post->user->name:'[deleted]'  }}</a></span> <!-- ak nevies najst uzivatela v tabulke, zmen jeho meno na [deleted] -->
                     </div>
                 </article>
             </div>

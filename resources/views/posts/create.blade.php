@@ -13,22 +13,20 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
 
-    <div class="container justify-content-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <form method="POST" action="{{ @$action }}">
-                            @csrf
-                            <div class="form-group" style="padding-bottom: 10px">
-                                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
-                            </div>
-                            <div class="form-group">
-                                <textarea class="summernote" id="summernote" name="article"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-success btn-block">Add Post</button>
-                        </form>
-                    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card-body">
+                    <form method="POST" action="{{ @$action }}">
+                        @csrf
+                        <div class="form-group" style="padding-bottom: 10px">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="summernote" id="summernote" name="article"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Add Post</button>
+                    </form>
                 </div>
             </div>
         </div>

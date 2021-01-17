@@ -16,8 +16,9 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $posts = $user->posts;
 
-        return view('profile.index', ['model' => $user]); // ulozi do premennej model aktualne prihlaseneho uzivatela
+        return view('profile.index', ['model' => $user, 'posts' => $posts]); // ulozi do premennej model aktualne prihlaseneho uzivatela
     }
 
     /**
