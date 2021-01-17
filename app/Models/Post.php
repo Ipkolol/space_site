@@ -37,6 +37,11 @@ class Post extends Model
         return date('d.m.Y', strtotime($value));
     }
 
+    public function getUpdatedAtAttribute($value)
+    {
+        return date('d.m.Y', strtotime($value));
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

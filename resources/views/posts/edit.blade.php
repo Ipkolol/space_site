@@ -19,13 +19,14 @@
                 <div class="card-body">
                     <form method="POST" action="{{ @$action }}">
                         @csrf
+                        @method($method)
                         <div class="form-group" style="padding-bottom: 10px">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ $post->title }}">
                         </div>
                         <div class="form-group">
-                            <textarea class="summernote" id="summernote" name="article">Text...</textarea>
+                            <textarea class="summernote" id="summernote" name="article">{{ $post->article }}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-success btn-block">Add Post</button>
+                        <button type="submit" class="btn btn-success btn-block">Edit Post</button>
                     </form>
                 </div>
             </div>

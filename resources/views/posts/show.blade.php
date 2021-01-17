@@ -22,7 +22,7 @@
                         {!! nl2br($post->article) !!}
                     </div>
                     <div>
-                        <time><span class="badge">Posted {{ @$post->created_at }}</span> </time>
+                        <time><span class="badge">{!! empty($post->updated_at) ? 'Posted: '. @$post->created_at : 'Posted: '. @$post->created_at . '<br>'. 'Last time edited: '. @$post->updated_at !!}</span> </time>
                         <br>
                         <span class="badge">by <a href="{{ !empty($post->user->name) ? url('user', @$post->user->id ):''}}">{{ !empty($post->user->name) ? $post->user->name:'[deleted]'  }}</a></span> <!-- ak nevies najst uzivatela v tabulke, zmen jeho meno na [deleted] -->
                     </div>

@@ -61,11 +61,16 @@ class PostController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.edit', [
+            'action' => route('posts.update', $id),
+            'method' => 'put',
+            'post' => $post,
+        ]);
     }
 
     /**
@@ -77,7 +82,10 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+        $post->update($request->all());
+
+        return redirect()->route('posts.index');
     }
 
     /**

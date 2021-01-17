@@ -37,7 +37,7 @@
                                         <a href="{{ route('posts.delete', [$post->id]) }}" data-method="DELETE" style="padding-right: 10px">
                                             <img border="0" alt="delete" src="https://image.flaticon.com/icons/png/512/61/61848.png" width="20" height="20">
                                         </a>
-                                        <a href="">
+                                        <a href="{{ route('posts.edit', [$post->id]) }}">
                                             <img border="0" alt="edit" src="https://image.flaticon.com/icons/png/512/84/84380.png" width="20" height="20">
                                         </a>
                                     </div>
