@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
+    <head xmlns="http://www.w3.org/1999/html">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,40 +13,25 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
 
-    <div class="container">
-        <div class="row no-gutters">
-            <div class="col-sm-12" >
-                <article class="post">
-                    <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
-                    <div class="article-content">
-                        {!! nl2br($post->article) !!}
-                    </div>
-                    <div>
-                        <time><span class="badge">Posted {{ @$post->created_at }}</span> </time>
-                        <br>
-                        <span class="badge">by <a href="{{ url('user', @$post->user->id ) }}">{{ @$post->user->name }}</a></span>
-                    </div>
-                </article>
-            </div>
-        </div>
-        <hr>
-        <h2>Comments: </h2>
+    <div class="container justify-content-center">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-8">
                     <div class="card-body">
-                        <form method=”POST” action="">
+                        <form method="POST" action="{{ @$action }}">
                             @csrf
-                            <div class="form-group">
-                                <textarea class="form-control" name="summernote" id="summernote"></textarea>
+                            <div class="form-group" style="padding-bottom: 10px">
+                                <input type="text" class="form-control" id="title" name="title" placeholder="Title">
                             </div>
-                            <button type=”submit” class="btn btn-success btn-block">Add comment</button>
+                            <div class="form-group">
+                                <textarea class="summernote" id="summernote" name="article"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Add Post</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-        <hr>
     </div>
 
     <!-- summernote css/js -->

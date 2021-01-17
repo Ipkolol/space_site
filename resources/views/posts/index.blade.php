@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+    @auth
+    <div class="container">
+        <div class="row">
+            <div class="create-post-avatar" id="create-post-avatar">
+                @if(Auth::user()->avatar)
+                <a href="{{ url('user', Auth::user()->id ) }}"><img src="{{ asset('/storage/images/'. Auth::user()->avatar) }}" class="rounder-circle" alt="create_post_avatar_image" style="max-height: 40px"></a>
+                @endif
+            </div>
+            <div class="col-sm-3">
+                <a href="{{route('posts.create')}}" class="btn btn-primary btn-block" role="button">New post</a>
+            </div>
+        </div>
+        <hr>
+    </div>
+    @endauth
+
     <div class="container post-list">
         @foreach ($posts as $post)
             <!-- to budu spravy vo for eachi -->
