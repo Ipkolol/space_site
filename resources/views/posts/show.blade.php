@@ -13,9 +13,10 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     </head>
 
+    <!-- Zobrazenie daneho postu -->
     <div class="container">
-        <div class="row no-gutters">
-            <div class="col-sm-12" >
+        <div class="row no-gutters justify-content-center">
+            <div class="col-sm-6" >
                 <article class="post">
                     <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
                     <div class="article-content">
@@ -27,13 +28,15 @@
                         <span class="badge">by <a href="{{ !empty($post->user->name) ? url('user', @$post->user->id ):''}}">{{ !empty($post->user->name) ? $post->user->name:'[deleted]'  }}</a></span> <!-- ak nevies najst uzivatela v tabulke, zmen jeho meno na [deleted] -->
                     </div>
                 </article>
+                <hr>
             </div>
         </div>
-        <hr>
-        <h2>Comments: </h2>
+
+        <!-- Formular na odosielanie komentarov -->
         <div class="container">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-6">
+                    <h2>Comments: </h2>
                     <div class="card-body">
                         <form method=”POST” action="">
                             @csrf
@@ -43,10 +46,30 @@
                             <button type=”submit” class="btn btn-success btn-block">Add comment</button>
                         </form>
                     </div>
+                    <hr>
                 </div>
             </div>
         </div>
-        <hr>
+
+        <!-- Tu sa zobrazuju komentare: -->
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="container" style="padding-top: 10px">
+                        <div class="card">
+                            <div class="" style="padding-left: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s;">
+                                <article class="">
+                                    <header><a href=""><h5> {{ @$post->title }} </h5> </a> </header>
+                                    <time class="card-text"><small class="text-muted">{{ @$post->created_at }}</small></time>
+                                    <div><p class="card-text">Text komentara...</p></div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <!-- summernote css/js -->

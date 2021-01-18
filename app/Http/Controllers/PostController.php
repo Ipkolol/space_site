@@ -37,6 +37,8 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        // validacia
+
         $post = Post::create($request->all());
         $post->user_id = Auth::user()->id;
 
@@ -82,6 +84,8 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // validacia
+
         $post = Post::find($id);
         $post->update($request->all());
 

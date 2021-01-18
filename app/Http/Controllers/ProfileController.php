@@ -78,6 +78,8 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
+        // validacia
+
         $user = $user = Auth::user();
         $user->update($request->all());
         return redirect()->route('profile.index');

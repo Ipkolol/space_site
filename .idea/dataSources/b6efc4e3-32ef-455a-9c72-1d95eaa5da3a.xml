@@ -5383,17 +5383,21 @@ tag_id</ColNames>
       <Position>12</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <index id="1279" parent="422" name="users_email_unique">
+    <column id="1279" parent="422" name="deleted_at">
+      <Position>13</Position>
+      <DataType>timestamp|0s</DataType>
+    </column>
+    <index id="1280" parent="422" name="users_email_unique">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="1280" parent="422" name="PRIMARY">
+    <key id="1281" parent="422" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="1281" parent="422" name="users_email_unique">
+    <key id="1282" parent="422" name="users_email_unique">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_unique</UnderlyingIndexName>
     </key>
