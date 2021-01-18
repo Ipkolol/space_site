@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -29,7 +30,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('profile', ProfileController::class);
     Route::get('profile/{profile}/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
     Route::get('posts/{post}/delete', [PostController::class, 'destroy'])->name('posts.delete');
+    Route::get('comment/{comment}/delete', [CommentController::class, 'destroy'])->name('comment.delete');
 });
 
 Route::resource('posts', PostController::class);
 Route::resource('user', UserController::class);
+Route::resource('comment', CommentController::class);

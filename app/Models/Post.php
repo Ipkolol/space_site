@@ -53,4 +53,9 @@ class Post extends Model
         $this->attributes['slug'] = Str::slug($value, '-');
         $this->attributes['user_id'] = Auth::user()->id;
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

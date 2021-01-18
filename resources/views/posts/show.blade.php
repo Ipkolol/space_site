@@ -33,41 +33,58 @@
         </div>
 
         <!-- Formular na odosielanie komentarov -->
+        @auth
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <h2>Comments: </h2>
                     <div class="card-body">
-                        <form method=”POST” action="">
+                        <form method="POST" action="{{ route('comment.store') }}">
                             @csrf
                             <div class="form-group">
-                                <textarea class="form-control" name="summernote" id="summernote"></textarea>
+                                <textarea class="summernote" id="summernote" name="comment_text"></textarea>
+                                <input type="hidden" id="post_id" name="post_id" value="{{ $post->id }}">
                             </div>
-                            <button type=”submit” class="btn btn-success btn-block">Add comment</button>
+                            <div>
+
+                            </div>
+                            <button type="submit" class="btn btn-success btn-block">Add comment</button>
                         </form>
                     </div>
                     <hr>
                 </div>
             </div>
         </div>
+        @endauth
 
         <!-- Tu sa zobrazuju komentare: -->
         <div>
+            @foreach($post->comments as $comment)
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <div class="container" style="padding-top: 10px">
                         <div class="card">
                             <div class="" style="padding-left: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s;">
                                 <article class="">
-                                    <header><a href=""><h5> {{ @$post->title }} </h5> </a> </header>
-                                    <time class="card-text"><small class="text-muted">{{ @$post->created_at }}</small></time>
-                                    <div><p class="card-text">Text komentara...</p></div>
+                                    <time class="card-text"><small class="text-muted">{{ $comment->created_at }}</small></time>
+                                    <div><p class="card-text">{!! $comment->comment_text !!}</p></div>
+                                    <footer>
+                                        @can('delete', $comment)
+                                        <div class="float-left">
+                                            <a href="{{ route('comment.delete', [$comment->id]) }}"><small>Delete</small></a>
+                                        </div>
+                                        @endcan
+                                        <div class="float-right">
+                                            <small><b>comment by </b></small><a href="{{ route('user.show', [$comment->user->id]) }}"><small><b>{{ $comment->user->name }}</b></small></a>
+                                        </div>
+                                    </footer>
                                 </article>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
 
     </div>
