@@ -44,9 +44,11 @@
                                             <img border="0" alt="edit" src="https://image.flaticon.com/icons/png/512/84/84380.png" width="20" height="20">
                                         </a>
                                         @endcan
+                                            @can('uploadThumbnail', $post)
                                             <a href="{{ route('editThumbnail', [$post->id]) }}">
                                                 <img border="0" alt="edit" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png" width="20" height="20">
                                             </a>
+                                            @endcan
                                     </div>
                                     @endauth
                                 </footer>

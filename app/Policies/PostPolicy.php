@@ -91,4 +91,9 @@ class PostPolicy
     {
         //
     }
+
+    public function uploadThumbnail(User $user, Post $post)
+    {
+        return $user->id == $post->user_id;
+    }
 }
