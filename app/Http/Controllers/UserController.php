@@ -48,8 +48,15 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $posts = $user->posts()->orderBy('created_at','desc')->get();
+        $numberOfPosts = $posts->count();
+        $numberOfComments = $user->comments->count();
 
-        return view('user.show', ['user' => $user, 'posts' => $posts]);
+        return view('user.show', [
+            'user' => $user,
+            'posts' => $posts,
+            'numberOfPosts' => $numberOfPosts,
+            'numberOfComments' => $numberOfComments
+        ]);
     }
 
     /**

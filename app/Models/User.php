@@ -13,6 +13,15 @@ class User extends Authenticatable
     use HasFactory, Notifiable, SoftDeletes;
 
     /**
+     * The model's default values for attributes.
+     *
+     * @var array
+     */
+    protected $attributes = [
+        'avatar' => 'avatar_placeholder.png',
+    ];
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array

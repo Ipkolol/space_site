@@ -17,8 +17,15 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $posts = $user->posts()->orderBy('created_at','desc')->get(); // zobraz posty uzivatela na jeho profile v chronologickom poradi
+        $numberOfPosts = $user->posts->count();
+        $numberOfComments = $user->comments->count();
 
-        return view('profile.index', ['model' => $user, 'posts' => $posts]); // ulozi do premennej model aktualne prihlaseneho uzivatela
+        return view('profile.index', [
+            'model' => $user,
+            'posts' => $posts,
+            'numberOfPosts' => $numberOfPosts,
+            'numberOfComments' => $numberOfComments
+        ]); // ulozi do premennej model aktualne prihlaseneho uzivatela
     }
 
     /**

@@ -12,8 +12,9 @@
                             @endif
                             <div class="mt-3">
                                 <h4>{{ @$model->name }}</h4>
-                                <p class="text-secondary mb-1">{{ @$model->focus }}</p>
-                                <p class="text-muted font-size-sm">{{ @$model->address }}</p>
+                                <p class="text-muted">Focus: {{ @$model->focus }}</p>
+                                <p class="text-muted">Posts: {{ $numberOfPosts }}</p>
+                                <p class="text-muted">Comments: {{ $numberOfComments }}</p>
                                 <a href="{{route('profile.edit', [@$model->id])}}" class="btn btn-primary" role="button">Edit</a>
                                 <a href="{{route('profile.delete',[@$model->id])}}" class="btn btn-danger" data-method="DELETE" role="button">Delete</a>
                                 <hr>
@@ -85,6 +86,7 @@
             </div>
         </div>
     </div> <!-- koniec okna s informaciami o profile -->
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <hr>

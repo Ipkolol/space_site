@@ -115,4 +115,30 @@ class PostController extends Controller
 
         return redirect()->route('posts.index');
     }
+
+    public function editThumbnail($id)
+    {
+        $post = Post::findOrFail($id);
+
+        return view('posts.uploadThumbnail', [
+            'post' => $post,
+        ]);
+
+    }
+
+    public function uploadThumbnail(Request $request)
+    {
+
+        $post = Post::findOrFail($request->post_id);
+
+        if ($request->hasFile('image')) {
+            $filename = $request->image->getClientOriginalName();
+            $request->image->storeAs('thumbnails', $filename, 'public');
+            $post->thumbnail = $filename;
+            $post->save();
+        }
+
+        return redirect()->route('posts.index');
+
+    }
 }

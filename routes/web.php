@@ -25,6 +25,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('uploadAvatar', [ProfileController::class, 'uploadAvatar']);
+Route::get('posts/{post}/editThumbnail', [PostController::class, 'editThumbnail'])->name('editThumbnail');
+Route::post('posts/uploadThumbnail', [PostController::class, 'uploadThumbnail'])->name('uploadThumbnail');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('profile', ProfileController::class);

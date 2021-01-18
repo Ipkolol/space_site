@@ -19,6 +19,7 @@ class Post extends Model
     protected $attributes = [
         'up_vote' => 0,
         'down_vote' => 0,
+        'thumbnail' => 'thumbnail_placeholder.png'
     ];
 
     /**

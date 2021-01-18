@@ -45,9 +45,6 @@
                                 <textarea class="summernote" id="summernote" name="comment_text"></textarea>
                                 <input type="hidden" id="post_id" name="post_id" value="{{ $post->id }}">
                             </div>
-                            <div>
-
-                            </div>
                             <button type="submit" class="btn btn-success btn-block">Add comment</button>
                         </form>
                     </div>

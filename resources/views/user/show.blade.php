@@ -12,8 +12,9 @@
                         @endif
                         <div class="mt-3">
                             <h4>{{ @$user->name }}</h4>
-                            <p class="text-secondary mb-1">{{ @$user->focus }}</p>
-                            <p class="text-muted font-size-sm">{{ @$user->address }}</p>
+                            <p class="text-muted">Focus: {{ @$user->focus }}</p>
+                            <p class="text-muted">Posts: {{ $numberOfPosts }}</p>
+                            <p class="text-muted">Commments: {{ $numberOfComments }}</p>
                         </div>
                     </div>
                 </div>

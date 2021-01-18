@@ -23,7 +23,7 @@
                 <div class="post">
                     <div class="row no-gutters" style="padding-top: 10px">
                         <div class="col-sm-3" id="article_img">
-                            <img src="https://cdn.mos.cms.futurecdn.net/g9Yp8ZrhqH3zsQNd4WTiJe.jpg" class="card-img" alt="europa" style="max-width: 300px">
+                            <img src="{{ asset('/storage/thumbnails/'. $post->thumbnail) }}" class="card-img" alt="europa" style="max-width: 300px">
                         </div>
                         <div class="col-sm-9" style="padding-left: 10px">
                             <article class="">
@@ -44,6 +44,9 @@
                                             <img border="0" alt="edit" src="https://image.flaticon.com/icons/png/512/84/84380.png" width="20" height="20">
                                         </a>
                                         @endcan
+                                            <a href="{{ route('editThumbnail', [$post->id]) }}">
+                                                <img border="0" alt="edit" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-512.png" width="20" height="20">
+                                            </a>
                                     </div>
                                     @endauth
                                 </footer>
@@ -51,6 +54,7 @@
                         </div>
                     </div>
                 </div>
+            <hr>
         @endforeach
     </div>
     <hr>
