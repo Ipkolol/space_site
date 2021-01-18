@@ -28,7 +28,7 @@ Route::post('uploadAvatar', [ProfileController::class, 'uploadAvatar']);
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('profile', ProfileController::class);
     Route::get('profile/{profile}/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
-    Route::get('posts/{posts}/delete', [PostController::class, 'destroy'])->name('posts.delete');
+    Route::get('posts/{post}/delete', [PostController::class, 'destroy'])->name('posts.delete');
 });
 
 Route::resource('posts', PostController::class);

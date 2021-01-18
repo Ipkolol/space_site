@@ -46,8 +46,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::find($id);
-        $posts = $user->posts;
+        $user = User::findOrFail($id);
+        $posts = $user->posts()->orderBy('created_at','desc')->get();
 
         return view('user.show', ['user' => $user, 'posts' => $posts]);
     }

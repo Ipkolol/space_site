@@ -11,12 +11,12 @@ class ProfileController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function index()
     {
         $user = Auth::user();
-        $posts = $user->posts;
+        $posts = $user->posts()->orderBy('created_at','desc')->get(); // zobraz posty uzivatela na jeho profile v chronologickom poradi
 
         return view('profile.index', ['model' => $user, 'posts' => $posts]); // ulozi do premennej model aktualne prihlaseneho uzivatela
     }
@@ -78,9 +78,15 @@ class ProfileController extends Controller
      */
     public function update(Request $request)
     {
-        // validacia
-
         $user = $user = Auth::user();
+        // validacia
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|max:255|email|unique:users,email,' . $user->id,
+            'phone_number' => 'digits:10',
+            'address' => 'max:255'
+        ]);
+
         $user->update($request->all());
         return redirect()->route('profile.index');
     }

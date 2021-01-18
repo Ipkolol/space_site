@@ -15,7 +15,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('updated_at','desc')->get(); // uloz vsetky posty z databazy do premennej posts, v chronologickom poradi
+        $posts = Post::orderBy('created_at','desc')->get(); // uloz vsetky posty z databazy do premennej posts, v chronologickom poradi
         return view('posts.index', ['posts' => $posts]); //vrat view 'posts.index' do ktoreho posli premennu posts
     }
 
@@ -38,12 +38,16 @@ class PostController extends Controller
     public function store(Request $request)
     {
         // validacia
+        $request->validate([
+            'title' => 'required|max:255',
+            'article' => 'required',
+        ]);
 
         $post = Post::create($request->all());
         $post->user_id = Auth::user()->id;
 
         $post->save();
-        return redirect()->back();
+        return redirect()->route('posts.index');
     }
 
     /**
@@ -54,7 +58,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
 
         return view('posts.show',['post' => $post]);
     }
@@ -67,7 +71,7 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
         return view('posts.edit', [
             'action' => route('posts.update', $id),
             'method' => 'put',
@@ -80,13 +84,18 @@ class PostController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
         // validacia
+        $request->validate([
+            'title' => 'required|max:255',
+            'article' => 'required',
+        ]);
 
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
+        $this->authorize($post);
         $post->update($request->all());
 
         return redirect()->route('posts.index');
@@ -100,7 +109,8 @@ class PostController extends Controller
      */
     public function destroy($id)
     {
-        $post = Post::find($id);
+        $post = Post::findOrFail($id);
+        $this->authorize($post);
         $post->delete();
 
         return redirect()->route('posts.index');

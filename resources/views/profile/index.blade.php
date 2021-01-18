@@ -33,12 +33,12 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h4> Informácie o Vás: </h4>
+                        <h4> About You: </h4>
                     </div>
                     <div class="card-body" id="profile_private">
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Meno a priezvisko</h6>
+                                <h6 class="mb-0">Full Name</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ @$model->name }}
@@ -56,7 +56,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Telefón</h6>
+                                <h6 class="mb-0">Phone number</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ @$model->phone_number }}
@@ -65,7 +65,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Addresa</h6>
+                                <h6 class="mb-0">Address</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ @$model->address }}
@@ -74,7 +74,7 @@
                         <hr>
                         <div class="row">
                             <div class="col-sm-3">
-                                <h6 class="mb-0">Zameranie</h6>
+                                <h6 class="mb-0">What's your focus?</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                                 {{ @$model->focus }}

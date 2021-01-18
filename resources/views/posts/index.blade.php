@@ -27,19 +27,23 @@
                         </div>
                         <div class="col-sm-9" style="padding-left: 10px">
                             <article class="">
-                                <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
+                                <header><a href="{{ route('posts.show', [$post->id]) }}"><h5> {{ @$post->title }} </h5> </a> </header>
                                 <time class="card-text"><small class="text-muted">{{ @$post->created_at }}</small></time>
                                 <div><p class="card-text">{{ substr(strip_tags($post->article), 0, 300) }}...</p></div>
                                 <footer class="">
-                                    <a href="{{ url('posts', @$post->id) }}">read more...</a>
+                                    <a href="{{ route('posts.edit', [$post->id]) }}">read more...</a>
                                     @auth()
                                     <div class="" style="float:right; padding-top: 50px">
+                                        @can('delete', $post)
                                         <a href="{{ route('posts.delete', [$post->id]) }}" data-method="DELETE" style="padding-right: 10px">
                                             <img border="0" alt="delete" src="https://image.flaticon.com/icons/png/512/61/61848.png" width="20" height="20">
                                         </a>
+                                        @endcan
+                                        @can('update', $post)
                                         <a href="{{ route('posts.edit', [$post->id]) }}">
                                             <img border="0" alt="edit" src="https://image.flaticon.com/icons/png/512/84/84380.png" width="20" height="20">
                                         </a>
+                                        @endcan
                                     </div>
                                     @endauth
                                 </footer>
