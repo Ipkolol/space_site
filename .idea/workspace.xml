@@ -19,13 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 19. added policy for uploading thumbnails">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/b6efc4e3-32ef-455a-9c72-1d95eaa5da3a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b6efc4e3-32ef-455a-9c72-1d95eaa5da3a.xml" afterDir="false" />
+    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 20. added user roles">
+      <change afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/PostPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/PostPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +172,7 @@
     <property name="DatabaseDriversLRU" value="mariadb" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../sem2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../its_broken" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -201,7 +201,7 @@
       <workItem from="1610983986796" duration="2991000" />
       <workItem from="1610987180994" duration="6834000" />
       <workItem from="1610996538201" duration="8815000" />
-      <workItem from="1611045400603" duration="6024000" />
+      <workItem from="1611045400603" duration="12312000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1. Laravel setup + laravel debug bar">
       <created>1610709483170</created>
@@ -343,7 +343,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611005886338</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Commit 20. added user roles">
+      <created>1611052226339</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1611052226339</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +388,8 @@
     <MESSAGE value="Commit 17. added comments, authorization and validation for comments" />
     <MESSAGE value="Commit 18. you can now add thumnails to your posts" />
     <MESSAGE value="Commit 19. added policy for uploading thumbnails" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 19. added policy for uploading thumbnails" />
+    <MESSAGE value="Commit 20. added user roles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 20. added user roles" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610716585206">
@@ -396,10 +404,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610974016665" />
-    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1610985127244">
+    <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1611053372194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1610985127244" />
+    <state x="740" y="262" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1611053372194" />
     <state width="1877" height="287" key="GridCell.Tab.0.bottom" timestamp="1610913855736">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -448,10 +456,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="287" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610913855737" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1611005890961">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1611052230708">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611005890961" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611052230708" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610716630302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

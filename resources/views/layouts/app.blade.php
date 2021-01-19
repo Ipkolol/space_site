@@ -55,6 +55,9 @@
                             @endif
                         @else
                             @auth
+                                @can('delete',Auth::user(), \App\Models\User::class)
+                                <a class="nav-link" href="{{route('user.index')}}">{{__('User Management')}} </a>
+                                @endcan
                                 <a class="nav-link" href="{{route('profile.index')}}">{{__('Profile')}} </a>
                             @endauth
                             <li class="nav-item dropdown">

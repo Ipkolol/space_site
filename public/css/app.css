@@ -9971,3 +9971,7 @@ h3 {
     border-color: #dee2e6;
   }
 }
+
+#users_table tr:nth-child(even) {background-color: #D0DAE1;}
+#users_table tr:nth-child(odd) {background-color: #EAEEF0;}
+#users_table th {background-color: #767E82; color: #FFFFFF}
