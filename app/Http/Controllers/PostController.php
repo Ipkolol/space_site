@@ -26,6 +26,8 @@ class PostController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+        $this->authorize('create',Post::class);
         return view('posts.create',['action' => route('posts.store')]);
     }
 
@@ -95,7 +97,7 @@ class PostController extends Controller
         ]);
 
         $post = Post::findOrFail($id);
-        $this->authorize($post);
+        $this->authorize('update', $post);
         $post->update($request->all());
 
         return redirect()->route('posts.index');
@@ -110,7 +112,7 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
-        $this->authorize($post);
+        $this->authorize('delete', $post);
         $post->delete();
 
         return redirect()->route('posts.index');
@@ -119,7 +121,7 @@ class PostController extends Controller
     public function editThumbnail($id)
     {
         $post = Post::findOrFail($id);
-
+        $this->authorize('uploadThumbnail', $post);
         return view('posts.uploadThumbnail', [
             'post' => $post,
         ]);

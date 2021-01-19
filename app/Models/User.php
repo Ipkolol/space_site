@@ -19,6 +19,7 @@ class User extends Authenticatable
      */
     protected $attributes = [
         'avatar' => 'avatar_placeholder.png',
+        'role' => 'user'
     ];
 
     /**
@@ -34,6 +35,7 @@ class User extends Authenticatable
         'address',
         'focus',
         'avatar',
+        'role',
     ];
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @auth
+    @can('create', \App\Models\Post::class)
     <div class="container">
         <div class="row">
             <div class="create-post-avatar" id="create-post-avatar">
@@ -15,7 +15,7 @@
         </div>
         <hr>
     </div>
-    @endauth
+    @endcan
 
     <div class="container post-list">
         @foreach ($posts as $post)
