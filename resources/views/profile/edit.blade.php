@@ -19,25 +19,25 @@
                     @csrf
                     @method($method)
                     <div class="form-group">
-                        <label for="name">Meno a priezvisko</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Meno a priezvisko" value="{{ @$model->name }}" required>
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ @$model->name }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="email">Emailová adresa</label>
-                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Emailová adresa" value="{{ @$model->email }}" required>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" value="{{ @$model->email }}" required>
                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                     </div>
                     <div class="form-group">
-                        <label for="phone_number">Telefónne číslo</label>
-                        <input type="text" class="form-control" id="phone_number" name="phone_number" placeholder="Telefónne číslo" value="{{ @$model->phone_number }}">
+                        <label for="phone_number">Phone Number</label>
+                        <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ @$model->phone_number }}">
                     </div>
                     <div class="form-group">
-                        <label for="address">Adresa</label>
-                        <input type="text" class="form-control" id="address" name="address" placeholder="Adresa" value="{{ @$model->address }}">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" name="address" value="{{ @$model->address }}">
                     </div>
                     <div class="form-group">
-                        <label for="focus">Zameranie</label>
-                        <input type="text" class="form-control" id="focus" name="focus" placeholder="Zameranie" value="{{ @$model->focus }}">
+                        <label for="focus">Focus</label>
+                        <input type="text" class="form-control" id="focus" name="focus" value="{{ @$model->focus }}">
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary form-control">

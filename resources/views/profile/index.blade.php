@@ -90,7 +90,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <hr>
-            <h2>Your posts:</h2>
+            <h2 style="color: white">Your posts:</h2>
             @foreach($posts as $post)
                 <div class="container" style="padding-top: 10px">
                     <div class="card">

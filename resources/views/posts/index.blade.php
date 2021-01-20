@@ -26,10 +26,10 @@
                             <img src="{{ asset('/storage/thumbnails/'. $post->thumbnail) }}" class="card-img" alt="europa" style="max-width: 300px">
                         </div>
                         <div class="col-sm-9" style="padding-left: 10px">
-                            <article class="">
+                            <article>
                                 <header><a href="{{ route('posts.show', [$post->id]) }}"><h5> {{ @$post->title }} </h5> </a> </header>
                                 <time class="card-text"><small class="text-muted">{{ @$post->created_at }}</small></time>
-                                <div><p class="card-text">{{ substr(strip_tags($post->article), 0, 300) }}...</p></div>
+                                <div><p class="card-text" style="color: white">{{ substr(strip_tags($post->article), 0, 300) }}...</p></div>
                                 <footer class="">
                                     <a href="{{ route('posts.edit', [$post->id]) }}">read more...</a>
                                     @auth()

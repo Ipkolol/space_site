@@ -5170,11 +5170,13 @@
       <ColNames>user_id</ColNames>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="1236" parent="416" name="comments_post_id_foreign">
       <ColNames>post_id</ColNames>
       <RefTableName>posts</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="1237" parent="417" name="id">
       <Position>1</Position>

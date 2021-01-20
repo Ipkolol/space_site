@@ -10,24 +10,29 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+        <style>
+
+        </style>
     </head>
 
     <!-- Zobrazenie daneho postu -->
     <div class="container">
         <div class="row no-gutters justify-content-center">
             <div class="col-sm-6" >
-                <article class="post">
-                    <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
-                    <div class="article-content">
-                        {!! nl2br($post->article) !!}
-                    </div>
-                    <div>
-                        <time><span class="badge">{!! empty($post->updated_at) ? 'Posted: '. @$post->created_at : 'Posted: '. @$post->created_at . '<br>'. 'Last time edited: '. @$post->updated_at !!}</span> </time>
-                        <br>
-                        <span class="badge">by <a href="{{ !empty($post->user->name) ? url('user', @$post->user->id ):''}}">{{ !empty($post->user->name) ? $post->user->name:'[deleted]'  }}</a></span> <!-- ak nevies najst uzivatela v tabulke, zmen jeho meno na [deleted] -->
-                    </div>
-                </article>
-                <hr>
+                <div class="card">
+                    <article class="post">
+                        <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
+                        <div class="article-content">
+                            {!! nl2br($post->article) !!}
+                        </div>
+                        <div>
+                            <time><span class="badge">{!! empty($post->updated_at) ? 'Posted: '. @$post->created_at : 'Posted: '. @$post->created_at . '<br>'. 'Last time edited: '. @$post->updated_at !!}</span> </time>
+                            <br>
+                            <span class="badge">by <a href="{{ !empty($post->user->name) ? url('user', @$post->user->id ):''}}">{{ !empty($post->user->name) ? $post->user->name:'[deleted]'  }}</a></span> <!-- ak nevies najst uzivatela v tabulke, zmen jeho meno na [deleted] -->
+                        </div>
+                    </article>
+                </div>
             </div>
         </div>
 
@@ -36,7 +41,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <h2>Comments: </h2>
+                    <hr>
+                    <h2 style="color: white">Comments: </h2>
                     <div class="card-body">
                         <form id="commentForm" method="POST" action="{{ route('comment.store') }}">
                             @csrf

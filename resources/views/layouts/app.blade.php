@@ -19,10 +19,25 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <style>
+        #footer{
+            background-color: rgb(32,32,32);
+        }
+
+        #footer p{
+            color: rgb(255,255,255);
+            margin-top: 10px;
+        }
+
+        #footer img{
+            margin-top: 3px;
+        }
+    </style>
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -83,9 +98,40 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="background-color: #1b1e21">
             @yield('content')
         </main>
+    </div>
+    <div>
+        <footer id="footer" class="page-footer" >
+            <div class="container-fluid padding">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <img src="{{ asset('/storage/images_footer/vesmir_logo.png') }}" height="45" alt="sapce_logo">
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="#"><p>Privacy Policy</p></a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="#"><p>Contact</p> </a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="#"><p>Advertisement</p> </a>
+                    </div>
+                    <div class="col-sm-3">
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="#"><img src="{{ asset('/storage/images_footer/fb_logo_footer.png') }}" height="40" alt="fb_logo"> </a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="#"><img src="{{ asset('/storage/images_footer/insta_logo_footer.png') }}" height="40" alt="insta_logo"> </a>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="#"><img src="{{ asset('/storage/images_footer/twitter_logo_footer.png') }}" height="40" alt="twitter_logo"> </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
