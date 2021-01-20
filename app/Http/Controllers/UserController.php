@@ -24,7 +24,7 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
     public function create()
     {
@@ -35,11 +35,21 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed'
+        ]);
+
+        $user = User::create($request->all());
+        $user->save();
+        return $user;
+
+        //return redirect()->route('user.index');
     }
 
     /**
@@ -90,13 +100,13 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\JsonResponse
      */
     public function destroy($id)
     {
         $user = User::findOrFail($id);
         $this->authorize('delete', $user);
         $user->delete();
-        return redirect()->back();
+        return response()->json(['deleted' =>'User deleted']);
     }
 }

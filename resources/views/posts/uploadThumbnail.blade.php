@@ -4,7 +4,7 @@
     <div class="container card justify-content-center">
         <div class="col-md-4">
             <div class="justify-content-center">
-                <h3>Post id: {{ $post->id }}</h3>
+                <h3>Post id: {{ $post->title }}</h3>
                 <form action="{{ route('uploadThumbnail')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <input type="file" name="image">

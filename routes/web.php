@@ -29,6 +29,7 @@ Route::get('posts/{post}/editThumbnail', [PostController::class, 'editThumbnail'
 Route::post('posts/uploadThumbnail', [PostController::class, 'uploadThumbnail'])->name('uploadThumbnail');
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::resource('user', UserController::class);
     Route::resource('profile', ProfileController::class);
     Route::get('profile/{profile}/delete', [ProfileController::class, 'destroy'])->name('profile.delete');
     Route::get('posts/{post}/delete', [PostController::class, 'destroy'])->name('posts.delete');
@@ -37,5 +38,5 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::resource('posts', PostController::class);
-Route::resource('user', UserController::class);
+
 Route::resource('comment', CommentController::class);
