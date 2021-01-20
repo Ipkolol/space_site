@@ -1,23 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!-- include libraries(jQuery, bootstrap) -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-        <style>
-
-        </style>
-    </head>
-
+    <style>
+        .comment-article {
+            padding-left: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        #comments {
+            padding-top: 10px;
+        }
+        #posted_at {
+            font-size: small;
+            font-weight: bold;
+        }
+    </style>
     <!-- Zobrazenie daneho postu -->
     <div class="container">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         <div class="row no-gutters justify-content-center">
             <div class="col-sm-6" >
                 <div class="card">
@@ -27,7 +31,7 @@
                             {!! nl2br($post->article) !!}
                         </div>
                         <div>
-                            <time><span class="badge">{!! empty($post->updated_at) ? 'Posted: '. @$post->created_at : 'Posted: '. @$post->created_at . '<br>'. 'Last time edited: '. @$post->updated_at !!}</span> </time>
+                            <time id="posted_at" >{!! empty($post->updated_at) ? 'Posted: '. @$post->created_at : 'Posted: '. @$post->created_at .'<br>' . 'Last time edited: '. @$post->updated_at !!}</time>
                             <br>
                             <span class="badge">by <a href="{{ !empty($post->user->name) ? url('user', @$post->user->id ):''}}">{{ !empty($post->user->name) ? $post->user->name:'[deleted]'  }}</a></span> <!-- ak nevies najst uzivatela v tabulke, zmen jeho meno na [deleted] -->
                         </div>
@@ -42,7 +46,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <hr>
-                    <h2 style="color: white">Comments: </h2>
+                    <h2>Comments:</h2>
                     <div class="card-body">
                         <form id="commentForm" method="POST" action="{{ route('comment.store') }}">
                             @csrf
@@ -64,10 +68,10 @@
             @foreach($post->comments as $comment)
             <div class="row justify-content-center">
                 <div class="col-md-6">
-                    <div class="container" style="padding-top: 10px">
+                    <div class="container" id="comments">
                         <div class="card">
-                            <div class="" style="padding-left: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s;">
-                                <article class="">
+                            <div class="comment-article">
+                                <article>
                                     <time class="card-text"><small class="text-muted">{{ $comment->created_at }}</small></time>
                                     <div><p class="card-text">{!! $comment->comment_text !!}</p></div>
                                     <footer>

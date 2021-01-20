@@ -21,6 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/space_objects', function (){
+    return view('space_objects');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -38,5 +42,4 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::resource('posts', PostController::class);
-
 Route::resource('comment', CommentController::class);

@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+    #show-user-post-time {
+        font-size: small;
+        font-weight: bold;
+    }
+</style>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-4">
@@ -32,7 +39,7 @@
                         <div class="" style="padding-left: 10px; box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); transition: 0.3s;">
                             <article class="">
                                 <header><a href="{{ url('posts', @$post->id) }}"><h5> {{ @$post->title }} </h5> </a> </header>
-                                <time class="card-text"><small class="text-muted">{{ @$post->created_at }}</small></time>
+                                <time class="card-text text-muted" id="show-user-post-time">{{ @$post->created_at }}</time>
                                 <div><p class="card-text">{{ substr(strip_tags($post->article), 0, 100) }}...</p></div>
                             </article>
                         </div>

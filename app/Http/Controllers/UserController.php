@@ -49,7 +49,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = $request->password;
-
+        $this->authorize('create', User::class);
         $user->save();
         return response()->json($user);
     }
@@ -84,6 +84,7 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
+        $this->authorize('update', $user);
         return view('user.edit', [
            'action' => route('user.update', $id),
            'method' => 'put',

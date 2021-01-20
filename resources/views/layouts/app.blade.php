@@ -32,6 +32,9 @@
         #footer img{
             margin-top: 3px;
         }
+        #main {
+            background-color: #1b1e21;
+        }
     </style>
 
 </head>
@@ -49,8 +52,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <!-- posty sem -->
-                        <a class="nav-link" href="{{route('posts.index')}}">{{__('Posts')}} </a>
+                        <li>
+                            <a class="nav-link" href="{{route('posts.index')}}">{{__('Posts')}} </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{url('/space_objects')}}">{{__('Space Objects')}} </a>
+                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -71,12 +79,19 @@
                         @else
                             @auth
                                 @can('delete',Auth::user(), \App\Models\User::class)
-                                <a class="nav-link" href="{{route('user.index')}}">{{__('User Management')}} </a>
+                                    <li>
+
+                                    </li>
+                                <li>
+                                    <a class="nav-link" href="{{route('user.index')}}">{{__('User Management')}} </a>
+                                </li>
+                                <li>
+                                    <a class="nav-link" href="{{route('profile.index')}}">{{__('Profile')}} </a>
+                                </li>
                                 @endcan
-                                <a class="nav-link" href="{{route('profile.index')}}">{{__('Profile')}} </a>
                             @endauth
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ Auth::user()->name }}
                                 </a>
 
@@ -86,7 +101,6 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -98,7 +112,7 @@
             </div>
         </nav>
 
-        <main class="py-4" style="background-color: #1b1e21">
+        <main class="py-4" id="main">
             @yield('content')
         </main>
     </div>

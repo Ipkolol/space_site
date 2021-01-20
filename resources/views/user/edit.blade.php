@@ -36,7 +36,7 @@
                         <input type="text" class="form-control" id="address" name="address" value="{{ @$user->address }}">
                     </div>
                     <div class="form-group">
-                        <label for="focus">Role</label>
+                        <label for="role">Role</label>
                         <input type="text" class="form-control" id="role" name="role" value="{{ @$user->role }}">
                     </div>
                     <div class="form-group">
