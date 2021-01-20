@@ -1,17 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        #article_img{
-            max-width: 300px;
-        }
-        #index_post_time {
-            font-size: small;
-            font-style: italic;
-            font-family: Nunito;
-            font-weight: bold;
-        }
-    </style>
     @can('create', \App\Models\Post::class)
     <div class="container">
         <div class="row">

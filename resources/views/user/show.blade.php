@@ -2,10 +2,7 @@
 
 @section('content')
 <style>
-    #show-user-post-time {
-        font-size: small;
-        font-weight: bold;
-    }
+
 </style>
 
 <div class="container">

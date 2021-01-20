@@ -1,12 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        #article_title {
-            padding-bottom: 10px;
-        }
-    </style>
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">

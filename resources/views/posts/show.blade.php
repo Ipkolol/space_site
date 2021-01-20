@@ -1,20 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <style>
-        .comment-article {
-            padding-left: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-            transition: 0.3s;
-        }
-        #comments {
-            padding-top: 10px;
-        }
-        #posted_at {
-            font-size: small;
-            font-weight: bold;
-        }
-    </style>
     <!-- Zobrazenie daneho postu -->
     <div class="container">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
