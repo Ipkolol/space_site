@@ -60,37 +60,25 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- vypis chyb -->
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <form id="userForm" method="post" action="{{ route('user.store') }}">
+                    <form id="userForm">
                         @csrf
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Full name">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Full name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                         </div>
                         <div class="form-group">
                             <label for="password">Confirm Password</label>
-                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password">
+                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password" required>
                         </div>
-                        <div class="form-group">
-                            <input class="btn btn-primary form-control">
-                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>
@@ -113,11 +101,35 @@
                 })
             }
         }
+    </script>
 
-        function addUser()
-        {
+    <script>
+        $("#userForm").submit(function (e) {
+            e.preventDefault();
 
-        }
+            let name = $("#name").val();
+            let email = $("#email").val();
+            let password = $("#password").val();
+            let _token = $("input[name=_token]").val();
+
+            $.ajax({
+                url: "{{ route('user.store') }}",
+                type: 'POST',
+                data:{
+                    _token : _token,
+                    name: name,
+                    email: email,
+                    password: password,
+                },
+                success:function (response) {
+                    if (response) {
+                        $("#users_table tbody").append('<tr id="del_user'+response.id+'"> <td> <a href="">'+response.email+'</a></td> <td>'+response.name+'</td> <td></td> <td></td> <td>'+response.role+'<td><a href="javascript:void(0)" onclick="deleteUser('+response.id+')" class="btn btn-danger">Delete</a></td>');
+                        $("#userForm")[0].reset();
+                        $("#userModal").modal('hide');
+                    }
+                }
+            });
+        });
     </script>
 
 

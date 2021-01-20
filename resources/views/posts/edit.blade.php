@@ -31,10 +31,10 @@
                         @csrf
                         @method($method)
                         <div class="form-group" style="padding-bottom: 10px">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ $post->title }}">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Title" value="{{ $post->title }}" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="summernote" id="summernote" name="article">{{ $post->article }}</textarea>
+                            <textarea class="summernote" id="summernote" name="article" required>{{ $post->article }}</textarea>
                         </div>
                         <button type="submit" class="btn btn-success btn-block">Edit Post</button>
                     </form>

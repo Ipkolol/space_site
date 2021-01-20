@@ -20,11 +20,11 @@
                 @method($method)
                 <div class="form-group">
                     <label for="name">Meno a priezvisko</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Meno a priezvisko" value="{{ @$model->name }}">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Meno a priezvisko" value="{{ @$model->name }}" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Emailová adresa</label>
-                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Emailová adresa" value="{{ @$model->email }}">
+                    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" placeholder="Emailová adresa" value="{{ @$model->email }}" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">

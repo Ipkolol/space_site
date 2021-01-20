@@ -35,21 +35,23 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\JsonResponse
      */
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'name'=>'required',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|confirmed'
+            'password' => 'required|min:6|confirmed',
         ]);
 
-        $user = User::create($request->all());
-        $user->save();
-        return $user;
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
 
-        //return redirect()->route('user.index');
+        $user->save();
+        return response()->json($user);
     }
 
     /**

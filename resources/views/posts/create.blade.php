@@ -30,10 +30,10 @@
                     <form method="POST" action="{{ @$action }}">
                         @csrf
                         <div class="form-group" style="padding-bottom: 10px">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Title">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="summernote" id="summernote" name="article">Text...</textarea>
+                            <textarea class="summernote" id="summernote" name="article" required>Text...</textarea>
                         </div>
                         <button type="submit" class="btn btn-success btn-block">Add Post</button>
                     </form>

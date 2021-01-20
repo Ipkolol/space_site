@@ -38,7 +38,7 @@
                 <div class="col-md-6">
                     <h2>Comments: </h2>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('comment.store') }}">
+                        <form id="commentForm" method="POST" action="{{ route('comment.store') }}">
                             @csrf
                             <div class="form-group">
                                 <textarea class="summernote" id="summernote" name="comment_text"></textarea>
