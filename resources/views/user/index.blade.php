@@ -31,6 +31,7 @@
                             <th>Address</th>
                             <th>Role</th>
                             <th>Delete User</th>
+                            <th>Edit User</th>
                             </thead>
                             <tbody>
                             @foreach($users as $user)
@@ -41,6 +42,7 @@
                                     <td>{{$user->address}} </td>
                                     <td>{{$user->role}} </td>
                                     <td><a href="javascript:void(0)" onclick="deleteUser({{ $user->id }})" class="btn btn-danger">Delete</a></td>
+                                    <td><a href="{{ route('user.edit', [$user->id]) }}" class="btn btn-primary">Edit</a></td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -73,10 +75,6 @@
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Confirm Password</label>
-                            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
@@ -123,7 +121,7 @@
                 },
                 success:function (response) {
                     if (response) {
-                        $("#users_table tbody").append('<tr id="del_user'+response.id+'"> <td> <a href="">'+response.email+'</a></td> <td>'+response.name+'</td> <td></td> <td></td> <td>'+response.role+'<td><a href="javascript:void(0)" onclick="deleteUser('+response.id+')" class="btn btn-danger">Delete</a></td>');
+                        $("#users_table tbody").append('<tr id="del_user'+response.id+'"> <td> <a href="">'+response.email+'</a></td> <td>'+response.name+'</td> <td></td> <td></td> <td>'+response.role+'<td><a href="javascript:void(0)" onclick="deleteUser('+response.id+')" class="btn btn-danger">Delete</a></td> <td><a href="" class="btn btn-primary">Edit</a></td> </tr> ');
                         $("#userForm")[0].reset();
                         $("#userModal").modal('hide');
                     }

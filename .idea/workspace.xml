@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 22. added delete ajax and modal for creating users">
+    <list default="true" id="7cc9b5c5-a9b1-489d-8f9d-5563c052c179" name="Default Changelist" comment="Commit 23. added add user ajax">
+      <change afterPath="$PROJECT_DIR$/resources/views/user/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/PostPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/PostPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/user/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/index.blade.php" afterDir="false" />
     </list>
@@ -205,7 +201,7 @@
       <workItem from="1610987180994" duration="6834000" />
       <workItem from="1610996538201" duration="8815000" />
       <workItem from="1611045400603" duration="27914000" />
-      <workItem from="1611125707569" duration="13135000" />
+      <workItem from="1611125707569" duration="17313000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1. Laravel setup + laravel debug bar">
       <created>1610709483170</created>
@@ -368,7 +364,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611131550754</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Commit 23. added add user ajax">
+      <created>1611139212165</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1611139212165</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,21 +412,22 @@
     <MESSAGE value="Commit 20. added user roles" />
     <MESSAGE value="Commit 21. added user policies + user management for admins" />
     <MESSAGE value="Commit 22. added delete ajax and modal for creating users" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit 22. added delete ajax and modal for creating users" />
+    <MESSAGE value="Commit 23. added add user ajax" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit 23. added add user ajax" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610716585206">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610716585206" />
-    <state x="698" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610901551656">
+    <state x="698" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611142119156">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="698" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610901551656" />
-    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1610974016665">
+    <state x="698" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1611142119156" />
+    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1611143181317">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610974016665" />
+    <state x="751" y="229" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611143181317" />
     <state x="740" y="262" key="FileChooserDialogImpl" timestamp="1611137897740">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -476,10 +480,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="287" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610913855737" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1611131554661">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1611139216746">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611131554661" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1611139216746" />
     <state x="859" y="397" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1610716630302">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
